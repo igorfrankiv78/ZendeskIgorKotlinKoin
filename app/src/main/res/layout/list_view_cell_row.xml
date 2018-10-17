@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                                    xmlns:android="http://schemas.android.com/apk/res/android"
+                                    xmlns:tools="http://schemas.android.com/tools"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="@dimen/card_view_margin_top"
+                                    android:layout_marginLeft="@dimen/card_view_margin_left"
+                                    android:layout_marginRight="@dimen/card_view_margin_right"
+                                    card_view:cardCornerRadius="@dimen/card_corner_radius">
+    <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                                 xmlns:app="http://schemas.android.com/apk/res-auto"
+                                                 xmlns:tools="http://schemas.android.com/tools"
+                                                 android:layout_width="match_parent"
+                                                 android:layout_height="@dimen/constraint_layout_height">
+
+        <TextView
+            android:id="@+id/statusTextV"
+            android:layout_width="@dimen/status_textv_width"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/status_textv_margin_bottom"
+            android:layout_marginLeft="@dimen/status_textv_margin_left"
+            android:layout_marginTop="@dimen/status_textv_top"
+            android:textAlignment="center"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.518"
+            tools:layout_editor_absoluteY="@dimen/status_textv_editor_absolute_y"/>
+
+        <TextView
+            android:id="@+id/idTextV"
+            android:layout_width="@dimen/id_textv_width"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/id_textv_margin_bottom"
+            android:layout_marginTop="@dimen/id_textv_margin_top"
+            android:textAlignment="center"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.518"
+            app:layout_constraintLeft_toRightOf="@+id/statusTextV"
+            android:layout_marginLeft="@dimen/id_textv_margin_left"/>
+
+        <TextView
+            android:id="@+id/subjectTextV"
+            android:layout_width="@dimen/subject_textv_width"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/subject_textv_margin_bottom"
+            android:layout_marginLeft="@dimen/subject_textv_margin_left"
+            android:layout_marginTop="@dimen/subject_textv_margin_top"
+            android:textAlignment="center"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toRightOf="@+id/idTextV"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.555"
+            tools:layout_editor_absoluteY="@dimen/subject_textv_absolute_y"/>
+
+        <TextView
+            android:id="@+id/descriptionTextV"
+            android:layout_width="@dimen/description_textv_width"
+            android:layout_height="@dimen/description_textv_height"
+            android:layout_marginBottom="@dimen/description_textv_marginBottom"
+            android:layout_marginLeft="@dimen/description_textv_marginLeft"
+            android:layout_marginTop="@dimen/description_textv_marginTop"
+            android:textAlignment="center"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toRightOf="@+id/subjectTextV"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.555"
+            tools:layout_editor_absoluteY="@dimen/description_textv_absoluteY" />
+
+    </android.support.constraint.ConstraintLayout>
+</android.support.v7.widget.CardView>

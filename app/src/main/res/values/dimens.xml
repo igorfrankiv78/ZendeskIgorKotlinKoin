@@ -1,0 +1,67 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
+
+    <dimen name="activity_padding_horizontal">16dp</dimen>
+
+    <dimen name="card_margin">8dp</dimen>
+    <dimen name="card_radius">2dp</dimen>
+
+    <dimen name="icon_width">44dp</dimen>
+    <dimen name="icon_height">44dp</dimen>
+
+    <dimen name="text_caption">12sp</dimen>
+    <dimen name="text">14sp</dimen>
+    <dimen name="text_subheading">16sp</dimen>
+    <dimen name="text_heading">18sp</dimen>
+    <dimen name="text_title">19sp</dimen>
+    <dimen name="text_headline">24sp</dimen>
+    <dimen name="text_display1">34sp</dimen>
+
+    <dimen name="cell_height">72dp</dimen>
+
+   <!---->
+    <dimen name="image_logo_height">60dp</dimen>
+    <dimen name="image_logo_absolute_x">8dp</dimen>
+    <dimen name="image_logo_absolute_y">16dp</dimen>
+
+    <dimen name="list_view_holder_width">344dp</dimen>
+    <dimen name="list_view_holder_margin_top">1dp</dimen>
+    <dimen name="list_view_holder_margin_end">8dp</dimen>
+    <dimen name="list_view_holder_margin_bottom">5dp</dimen>
+    <dimen name="list_view_holder_margin_right">8dp</dimen>
+
+    <dimen name="card_view_margin_top">5dp</dimen>
+    <dimen name="card_view_margin_left">5dp</dimen>
+    <dimen name="card_view_margin_right">5dp</dimen>
+    <dimen name="card_corner_radius">5dp</dimen>
+
+    <dimen name="constraint_layout_height">60dp</dimen>
+
+    <dimen name="status_textv_width">13dp</dimen>
+    <dimen name="status_textv_margin_bottom">8dp</dimen>
+    <dimen name="status_textv_margin_left">8dp</dimen>
+    <dimen name="status_textv_top">8dp</dimen>
+    <dimen name="status_textv_editor_absolute_y">21dp</dimen>
+
+    <dimen name="id_textv_width">42dp</dimen>
+    <dimen name="id_textv_margin_bottom">8dp</dimen>
+    <dimen name="id_textv_margin_top">8dp</dimen>
+    <dimen name="id_textv_margin_left">8dp</dimen>
+
+    <dimen name="subject_textv_width">80dp</dimen>
+    <dimen name="subject_textv_margin_bottom">8dp</dimen>
+    <dimen name="subject_textv_margin_left">8dp</dimen>
+    <dimen name="subject_textv_margin_top">8dp</dimen>
+    <dimen name="subject_textv_absolute_y">20dp</dimen>
+
+    <dimen name="description_textv_width">177dp</dimen>
+    <dimen name="description_textv_height">18dp</dimen>
+    <dimen name="description_textv_marginBottom">8dp</dimen>
+    <dimen name="description_textv_marginLeft">8dp</dimen>
+    <dimen name="description_textv_marginTop">8dp</dimen>
+    <dimen name="description_textv_absoluteY">22dp</dimen>
+    <!---->
+</resources>

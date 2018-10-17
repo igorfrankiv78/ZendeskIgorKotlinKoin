@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">ZendeskIgorKotlinKoin</string>
+
+    <string name="weather_title">Weather for %1$s at %2$s</string>
+
+    <string name="zendesk_logo">zendesk_logo</string>
+
+    <string name="SET_CHAR_AS_NEW">n</string>
+
+    <string name="NEW_TICKET_COLOR">#F5CA00</string>
+
+    <string name="SET_CHAR_AS_OPEN">o</string>
+
+    <string name="OPEN_TICKET_COLOR">#E82A2A</string>
+
+    <string name="SET_CHAR_AS_PENDING">p</string>
+
+    <string name="PENDING_TICKET_COLOR">#2e7d32</string>
+</resources>
