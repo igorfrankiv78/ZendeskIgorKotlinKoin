@@ -8,4 +8,27 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="Text" parent="Widget.AppCompat.TextView.SpinnerItem">
+        <item name="android:fontFamily">@font/ubuntu</item>
+        <item name="android:textSize">@dimen/text</item>
+        <item name="android:textColor">@color/primary_text</item>
+    </style>
+
+    <style name="TextHeading" parent="Text">
+        <item name="android:textSize">@dimen/text_heading</item>
+    </style>
+
+
+    <style name="PrimaryButton" parent="Widget.AppCompat.Button.Colored">
+        <item name="colorAccent">@color/primary</item>
+        <item name="colorControlHighlight">@color/accent</item>
+        <item name="android:fontFamily">@font/ubuntu</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textAllCaps">true</item>
+    </style>
+
+    <style name="TextSubHeading" parent="Text">
+        <item name="android:textSize">@dimen/text_subheading</item>
+    </style>
 </resources>

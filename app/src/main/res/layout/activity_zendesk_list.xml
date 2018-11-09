@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/mainBackGround"
-    tools:context="zendeskigorkotlinkoin.ie.screens.listoftickets.view.ListOfTicketsKotlin">
+    tools:context=".screens.listoftickets.view.ListOfTicketsActivity">
 
     <LinearLayout android:id="@+id/LinearLayoutHeaderLinear"
         android:layout_width="0dp"

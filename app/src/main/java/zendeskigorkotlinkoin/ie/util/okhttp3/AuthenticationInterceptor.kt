@@ -1,4 +1,4 @@
-package zendeskigorkotlinkoin.ie.app.builder.helpers
+package zendeskigorkotlinkoin.ie.util.okhttp3
 
 import okhttp3.Interceptor
 import okhttp3.Response

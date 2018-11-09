@@ -1,26 +1,30 @@
 package zendeskigorkotlinkoin.ie.screens.listoftickets.view.viewadapt
 
-/**
- * Created by igorfrankiv on 17/10/2018.
- */
+/*** Created by igorfrankiv on 17/10/2018.*/
 import android.content.Context
 import android.graphics.Color
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.LinearLayout
 import android.widget.TextView
-import zendeskigorkotlinkoin.ie.R
-import zendeskigorkotlinkoin.ie.util.UtilReduceStrKotlin
+import zendeskigorkotlinkoin.ie.model.Tickets
 import zendeskigorkotlinkoin.ie.model.TicketsResults
+import zendeskigorkotlinkoin.ie.util.str.UtilReduceStrKotlin
+import zendeskigorkotlinkoin.ie.R
 
-class ZendeskListViewAdapterKotlin(val ticketsResults: TicketsResults, val mContext:Context ) : RecyclerView.Adapter<ZendeskListViewAdapterKotlin.ViewHolder>() {
+class ZendeskListViewAdapter(val ticketsResults: TicketsResults,
+                             val mContext:Context,
+                             private val onClick: (Tickets) -> Unit ) :
+      RecyclerView.Adapter<ZendeskListViewAdapter.ViewHolder>() {
 
     private val NEW_TICKET_STR: String = "new"
     private val OPEN_TICKET_STR: String = "open"
     private val PENDING_TICKET_STR: String = "pending"
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+        holder.display(ticketsResults.results[ position ], onClick)
 
         when (this.ticketsResults.results.get(position).status) {
             NEW_TICKET_STR -> {
@@ -52,17 +56,23 @@ class ZendeskListViewAdapterKotlin(val ticketsResults: TicketsResults, val mCont
     }
 
     inner class ViewHolder (view: View) : RecyclerView.ViewHolder(view) {
+
         internal val statusTextV:TextView
         internal val idTextV:TextView
         internal val subjectTextV:TextView
         internal val descriptionTextV:TextView
+        internal val weatherItemLayout: LinearLayout
 
         init {
+            weatherItemLayout = view.findViewById<LinearLayout>(R.id.linearLayoutMainContainer)
             statusTextV =  view.findViewById<View>(R.id.statusTextV) as (TextView)
             idTextV = view.findViewById<View>(R.id.idTextV) as (TextView)
             subjectTextV = view.findViewById<View>(R.id.subjectTextV) as (TextView)
             descriptionTextV = view.findViewById<View>(R.id.descriptionTextV) as (TextView)
         }
 
+        fun display(dailyForecastModel: Tickets, onClick: (Tickets) -> Unit ) {
+            weatherItemLayout.setOnClickListener { onClick(dailyForecastModel) }
+        }
     }
 }

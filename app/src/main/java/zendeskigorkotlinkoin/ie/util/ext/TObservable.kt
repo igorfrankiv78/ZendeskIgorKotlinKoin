@@ -4,7 +4,7 @@ import io.reactivex.Observable
 import io.reactivex.subjects.PublishSubject
 
 /*** Created by igorfrankiv on 17/10/2018.*/
-class MyObservable<T> {
+class TObservable<T> {
 
     protected val onAdd: PublishSubject<T>
     val observable: Observable<T>

@@ -4,8 +4,8 @@ package zendeskigorkotlinkoin.ie.zendesk
 import io.reactivex.Observable
 import retrofit2.http.GET
 import io.reactivex.Single
-import retrofit2.Call
 import retrofit2.http.Url
+import retrofit2.Call
 import zendeskigorkotlinkoin.ie.model.TicketsResults
 
 interface ZendeskSVDataSource {
@@ -14,7 +14,7 @@ interface ZendeskSVDataSource {
     fun getTicketsSingle(@Url url: String): Single<TicketsResults>
 
     @GET
-    fun getTicketsCall(@Url url: String): Call<TicketsResults>
+    fun getTicketsCall(@Url url: String): Call<TicketsResults>?
 
     @GET
     fun getTicketsObservable(@Url url: String): Observable<TicketsResults>

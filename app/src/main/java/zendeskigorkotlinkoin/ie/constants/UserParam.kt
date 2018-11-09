@@ -1,7 +1,6 @@
 package zendeskigorkotlinkoin.ie.constants
 
-
-/*** Created by igorfrankiv on 07/10/2018.*/
+/*** Created by igorfrankiv on 07/10/2018. ***/
 
 class UserParam {
     companion object {

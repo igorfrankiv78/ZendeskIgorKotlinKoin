@@ -5,6 +5,7 @@ import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
 /*** Created by igor on 03/06/2017. */
+
 public final class Tickets {
 
     @SerializedName("id")

@@ -5,43 +5,51 @@ import retrofit2.Retrofit
 import okhttp3.OkHttpClient
 import okhttp3.Credentials
 import org.koin.dsl.module.applicationContext
-import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
-import retrofit2.converter.gson.GsonConverterFactory
-import zendeskigorkotlinkoin.ie.app.builder.helpers.AuthenticationInterceptor
-import zendeskigorkotlinkoin.ie.app.builder.helpers.SchedulerProvider
-import zendeskigorkotlinkoin.ie.constants.UserParam
-import zendeskigorkotlinkoin.ie.util.ext.MyObservable
-import zendeskigorkotlinkoin.ie.zendesk.ZendeskSVDataSource
 import zendeskigorkotlinkoin.ie.model.TicketsResults
+import retrofit2.converter.gson.GsonConverterFactory
+import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
+import zendeskigorkotlinkoin.ie.app.builder.DatasourceProperties.USERNAME
+import zendeskigorkotlinkoin.ie.app.builder.DatasourceProperties.PASSWORD
+import zendeskigorkotlinkoin.ie.app.builder.DatasourceProperties.API_BASE_URL
+import zendeskigorkotlinkoin.ie.util.okhttp3.AuthenticationInterceptor
+import zendeskigorkotlinkoin.ie.util.rx.SchedulerProvider
+import zendeskigorkotlinkoin.ie.util.ext.TObservable
+import zendeskigorkotlinkoin.ie.zendesk.ZendeskSVDataSource
 
 val remoteDatasourceModule = applicationContext {
     // provided components
     bean { myObservable<TicketsResults>() }
 
-    bean{ authenticationInterceptor() }
+    bean{ authenticationInterceptor(getProperty( USERNAME ), getProperty( PASSWORD )) }
 
     bean{ okHttpClient( get() ) }
 
-    bean{ zendeskService<ZendeskSVDataSource>( get(), get() ) }
+    bean{ zendeskService<ZendeskSVDataSource>( get(), get(), getProperty( API_BASE_URL ) ) }
 }
 
-// 0
-inline fun <reified T> myObservable(): MyObservable<T> {
-    return return MyObservable<T>()
+object DatasourceProperties {
+    const val URL="URL"
+    const val API_BASE_URL="API_BASE_URL" // UserParam.API_BASE_URL
+    const val USERNAME="USERNAME" // UserParam.USERNAME
+    const val PASSWORD="PASSWORD" // UserParam.PASSWORD
 }
-// 1
-fun authenticationInterceptor(): AuthenticationInterceptor {
-    return AuthenticationInterceptor(Credentials.basic(UserParam.USERNAME,
-            UserParam.PASSWORD))
+
+//  0
+inline fun <reified T> myObservable(): TObservable<T> {
+    return return TObservable<T>()
 }
-// 2
+//  1
+fun authenticationInterceptor(username:String, password:String): AuthenticationInterceptor {
+    return AuthenticationInterceptor(Credentials.basic(username, password))
+}
+//  2
 fun okHttpClient( authenticationInterceptor: AuthenticationInterceptor): OkHttpClient {
     return OkHttpClient.Builder().addNetworkInterceptor(authenticationInterceptor).build()
 }
 //  3
-inline fun <reified T>zendeskService( okHttpClient: OkHttpClient, androidSchedulers: SchedulerProvider): T {
+inline fun <reified T>zendeskService(okHttpClient: OkHttpClient, androidSchedulers: SchedulerProvider, apiBaseUrl:String ): T {
     return Retrofit.Builder().
-            baseUrl(UserParam.API_BASE_URL).
+            baseUrl( apiBaseUrl).
             addCallAdapterFactory(RxJava2CallAdapterFactory.createWithScheduler(androidSchedulers.io())).
             addConverterFactory(GsonConverterFactory.create()).client(okHttpClient).build().
             create( T::class.java)
